@@ -5,10 +5,10 @@
 var generate = function(numRows) {
     var result = [];
     if(numRows===0) return result;
-    else result = result.concat(generate(numRows-1));
+    else result = generate(numRows-1);
     var arr = [];
     for(var m=1;m<=numRows;m++){
-        arr.unshift(getNum(numRows,m,result[result.length-1]));
+        arr.push(getNum(numRows,m,result[result.length-1]));
     }
     result[numRows-1]=arr;
     return result;
